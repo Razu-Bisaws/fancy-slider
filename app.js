@@ -18,7 +18,7 @@ const showImages = (images) => {
 	if (images.length > 1) {
 		imagesArea.style.display = 'block';
 		gallery.innerHTML = '';
-		// gallery title
+		//show gallery title
 		galleryHeader.style.display = 'flex';
 		images.forEach((image) => {
 			let div = document.createElement('div');
@@ -52,7 +52,7 @@ const selectItem = (event, img) => {
 	if (item === -1) {
 		sliders.push(img);
 	} else {
-		// i just filter the existing img using filter method
+		// just filter the existing img using filter method
 		sliders = sliders.filter((fil) => fil != img);
 		element.classList.remove('added');
 	}
@@ -64,7 +64,7 @@ const createSlider = () => {
 		toastNotification('Select at least 2 image.');
 		return;
 	}
-	// crate slider 
+	// crate slider previous area
 	sliderContainer.innerHTML = '';
 	const prevNext = document.createElement('div');
 	prevNext.className =
@@ -143,14 +143,14 @@ sliderBtn.addEventListener('click', function () {
 	createSlider();
 });
 
-// search by hit enter
+// search hit enter
 document.querySelector('#search').addEventListener('keyup', (e) => {
 	if (e.key == 'Enter') {
 		searchBtn.click();
 	}
 });
 
-// create slider by hit enter
+// create slider hit enter
 document.querySelector('#duration').addEventListener('keyup', (e) => {
 	if (e.key == 'Enter') {
 		sliderBtn.click();
@@ -163,7 +163,6 @@ const spinner = () => {
 };
 
 //notification Modal
-
 const toastNotification = (noticeMessage) => {
 	const model = document.querySelector('.model');
 	const notification = document.createElement('div');
