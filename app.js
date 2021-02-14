@@ -162,7 +162,7 @@ const spinner = () => {
 	document.querySelector('.spinner').classList.toggle('d-none');
 };
 
-//notification Modal, inspired by florin pop
+//notification Modal
 
 const toastNotification = (noticeMessage) => {
 	const model = document.querySelector('.model');
