@@ -14,11 +14,11 @@ const KEY = '15674931-a9d714b6e9d654524df198e00&q';
 
 // show images
 const showImages = (images) => {
-	// if images not empty then show images else show notification
+	// if images not empty show images else show notification
 	if (images.length > 1) {
 		imagesArea.style.display = 'block';
 		gallery.innerHTML = '';
-		// show gallery title
+		// gallery title
 		galleryHeader.style.display = 'flex';
 		images.forEach((image) => {
 			let div = document.createElement('div');
@@ -26,7 +26,7 @@ const showImages = (images) => {
 			div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
 			gallery.appendChild(div);
 		});
-		// if image loaded then spinner will be toggle
+		//  spinner will be toggle
 		spinner();
 	} else {
 		spinner();
@@ -61,11 +61,10 @@ var timer;
 const createSlider = () => {
 	// check slider image length
 	if (sliders.length < 2) {
-		// alert('Select at least 2 image.');
 		toastNotification('Select at least 2 image.');
 		return;
 	}
-	// crate slider previous next area
+	// crate slider 
 	sliderContainer.innerHTML = '';
 	const prevNext = document.createElement('div');
 	prevNext.className =
@@ -79,7 +78,6 @@ const createSlider = () => {
 	document.querySelector('.main').style.display = 'block';
 	// hide image aria
 	const duration = document.getElementById('duration').value || 1000;
-	// i just check duration of timer by if block. if grater then 1 then run slider
 	if (duration > 1) {
 		imagesArea.style.display = 'none';
 		sliders.forEach((slide) => {
@@ -96,7 +94,7 @@ const createSlider = () => {
 			changeSlide(slideIndex);
 		}, duration);
 	} else {
-		// alert('Timer cannot be negative');
+		
 		toastNotification('Timer cannot be negative and problem fix');
 	}
 };
@@ -136,7 +134,7 @@ searchBtn.addEventListener('click', function () {
 				'You Search Word Is Invalid, But We showing Some Random Image'
 		  )
 		: '';
-	// search start and spinner also running
+	// spinner running
 	spinner();
 	sliders.length = 0;
 });
